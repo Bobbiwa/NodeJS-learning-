@@ -1,0 +1,39 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "login": "string",
+            "password": "admin2",
+            "age": 122,
+            "isDeleted": false
+        },
+        {
+            "id": "2",
+            "login": "string",
+            "password": "admin2",
+            "age": 12,
+            "isDeleted": false
+        },
+        {
+            "id": "3",
+            "login": "string",
+            "password": "admin3",
+            "age": 13,
+            "isDeleted": false
+        },
+        {
+            "id": "4",
+            "login": "string",
+            "password": "admin4",
+            "age": 14,
+            "isDeleted": false
+        },
+        {
+            "id": "5",
+            "login": "string",
+            "password": "admin5",
+            "age": 14,
+            "isDeleted": true
+        }
+    ]
+}
