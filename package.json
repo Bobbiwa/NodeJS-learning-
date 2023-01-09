@@ -1,0 +1,31 @@
+{
+  "name": "homework1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "task1-1": "nodemon task1-1/main.js",
+    "task1-2": "nodemon task1-2/main.js",
+    "task1-3": "npx babel-node task1-3/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bobbiwa/NodeJS-learning-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bobbiwa/NodeJS-learning-/issues"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/node": "^7.20.5",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.20.2",
+    "csvtojson": "^2.0.10",
+    "nodemon": "^2.0.20"
+  },
+  "homepage": "https://github.com/Bobbiwa/NodeJS-learning-#readme"
+}
