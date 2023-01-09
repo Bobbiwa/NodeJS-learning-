@@ -1,5 +1,5 @@
-const express = require('express')
-const usersCRUD = require('./utils/userCRUD')
+import express from 'express'
+import usersCRUD from './utils/userCRUD'
 
 const router = express.Router()
 

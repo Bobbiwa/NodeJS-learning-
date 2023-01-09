@@ -1,7 +1,8 @@
-const express = require('express')
-const Joi = require('joi')
-const Validator = require('express-joi-validation').createValidator({})
+import express from 'express'
+import Joi from 'joi'
+import expressJoi from 'express-joi-validation'
 
+const Validator =  expressJoi.createValidator({})
 const router = express.Router()
 
 //渲染login page

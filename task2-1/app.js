@@ -1,7 +1,7 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const router = require('./router')
-const swaggerInstall = require('./utils/swagger')
+import express from 'express'
+import bodyParser from 'body-parser'
+import router from './router'
+import swaggerInstall from './utils/swagger'
 
 const app = express()
 
