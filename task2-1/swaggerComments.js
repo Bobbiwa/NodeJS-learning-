@@ -1,6 +1,6 @@
 /**,
  * @swagger
- * /findAll:
+ * /user:
  *    get:
  *      tags:
  *      - User
@@ -20,7 +20,7 @@
 
 /**,
  * @swagger
- * /findById:
+ * /user/:id:
  *    get:
  *      tags:
  *      - User
@@ -49,7 +49,7 @@
 
 /**,
 * @swagger
-* /create:
+* /user:
 *    post:
 *      tags:
 *      - User
@@ -102,8 +102,8 @@
 
 /**,
  * @swagger
- * /update:
- *    post:
+ * /user:
+ *    put:
  *      tags:
  *      - User
  *      summary: 根据id更新用户
@@ -163,7 +163,7 @@
 
 /**,
  * @swagger
- * /delete:
+ * /user:
  *    delete:
  *      tags:
  *      - User
