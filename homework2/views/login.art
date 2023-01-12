@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
+</head>
+
+<body>
+    <form style="width:50vw;margin: auto" method="post" action="/post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">login</label>
+            <input name="login" type="text" class="form-control" id="exampleInputEmail1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">age</label>
+            <input name="age" type="number" class="form-control" id="exampleInputEmail1">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+
+</html>
