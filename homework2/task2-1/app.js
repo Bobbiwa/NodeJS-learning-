@@ -11,6 +11,9 @@ swaggerInstall(app)
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+//配置art-template
+app.engine('html', require('express-art-template'))
+
 //配置路由
 app.use(router)
 

@@ -88,3 +88,15 @@ exports.delete = (body, callback) => {
         })
     })
 }
+
+exports.autoSuggest = (substring, limit, callback) => {
+    fs.readFile(dbPath, (err, data) => {
+        if (err) callback(err)
+        const usersArr = JSON.parse(data).users
+        const ret = usersArr
+            .filter((item) => item.login.toLowerCase().includes(substring) === true)
+            .sort((a, b) => a.login.localeCompare(b.login))
+            .splice(0, limit)
+        callback(null, ret)
+    })
+}

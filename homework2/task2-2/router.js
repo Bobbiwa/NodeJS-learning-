@@ -6,8 +6,8 @@ const Validator =  expressJoi.createValidator({})
 const router = express.Router()
 
 //渲染login page
-router.get('/', (req, res) => {
-    res.render('login.art')
+router.get('/login', (req, res) => {
+    res.render('login.html')
 })
 
 //配置validation对象

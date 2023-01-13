@@ -2,35 +2,42 @@
     "users": [
         {
             "id": "1",
-            "login": "string",
+            "login": "aa",
             "password": "admin2",
             "age": 122,
             "isDeleted": false
         },
         {
             "id": "2",
-            "login": "string",
+            "login": "aac",
             "password": "admin2",
             "age": 12,
             "isDeleted": false
         },
         {
             "id": "3",
-            "login": "string",
+            "login": "aab",
             "password": "admin3",
             "age": 13,
             "isDeleted": false
         },
         {
             "id": "4",
-            "login": "string",
+            "login": "bb",
             "password": "admin4",
             "age": 14,
             "isDeleted": false
         },
         {
             "id": "5",
-            "login": "string",
+            "login": "bbc",
+            "password": "admin5",
+            "age": 14,
+            "isDeleted": true
+        },
+        {
+            "id": "6",
+            "login": "bba",
             "password": "admin5",
             "age": 14,
             "isDeleted": true

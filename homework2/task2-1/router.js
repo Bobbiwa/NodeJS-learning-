@@ -3,6 +3,24 @@ import usersCRUD from './utils/userCRUD'
 
 const router = express.Router()
 
+
+//渲染Search page
+router.get('/search', (req, res) => {
+    res.render('search.html')
+})
+
+router.get('/auto_suggest/:loginSubstring/:limit', (req, res) => {
+    const { loginSubstring, limit } = req.params
+    usersCRUD.autoSuggest(loginSubstring, limit, (err, data) => {
+        if (err) res.send(err)
+        //【问题】 如果这里渲染模板 search.html将重新再次渲染一遍，那么又会发送一次请求
+        // res.render('search.html', {
+        //     users: data
+        // })
+        console.log(data);
+    })
+})
+
 //查询所有用户
 router.get('/user', (req, res) => {
     usersCRUD.findAll((err, data) => {
