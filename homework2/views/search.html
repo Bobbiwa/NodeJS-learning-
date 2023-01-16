@@ -15,9 +15,8 @@
     <input class="w-2/5 m-auto form-control" list="datalistOptions" id="exampleDataList"
         placeholder="Type to search...">
     <datalist id="datalistOptions">
-        {{each users}}
-        <option value={{$value.login}}>
-        {{/each}}
+        <div id="demo">
+        </div>
     </datalist>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -29,11 +28,26 @@
             const { value } = document.getElementById("exampleDataList")
             axios.get(`/auto_suggest/${value}/${limit}`)
                 .then((value) => {
-
+                    const optionList = buildList(value.data)
+                    replaceDatalist(optionList)
                 }, (reason) => {
-
+                    console.log(reason);
                 })
         }, 0)
+    }
+    //构建option list
+    function buildList(data) {
+        const optionContainer = document.createElement("div")
+        for (let i = 0; i < data.length; i++) {
+            const option = document.createElement("option");
+            option.setAttribute("value", data[i].login)
+            optionContainer.appendChild(option)
+        }
+        return optionContainer
+    }
+    //替换option list
+    function replaceDatalist(list) {
+        document.getElementById("demo").replaceWith(list)
     }
 </script>
 
