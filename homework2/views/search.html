@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <input class="w-2/5 m-auto form-control" list="datalistOptions" id="exampleDataList"
+        placeholder="Type to search...">
+    <datalist id="datalistOptions">
+        <div id="demo">
+        </div>
+    </datalist>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const limit = 3 //【问题】这里的limit本应该放在.env比较合适，但是不知道怎么在html拿到环境变量
+    window.onkeydown = () => {
+        //若不加setTimeout，value将一直是上一次的旧值
+        setTimeout(() => {
+            const { value } = document.getElementById("exampleDataList")
+            axios.get(`/auto_suggest/${value}/${limit}`)
+                .then((value) => {
+                    const optionList = buildList(value.data)
+                    replaceDatalist(optionList)
+                }, (reason) => {
+                    console.log(reason);
+                })
+        }, 0)
+    }
+    //构建option list
+    function buildList(data) {
+        const optionContainer = document.createElement("div")
+        for (let i = 0; i < data.length; i++) {
+            const option = document.createElement("option");
+            option.setAttribute("value", data[i].login)
+            optionContainer.appendChild(option)
+        }
+        return optionContainer
+    }
+    //替换option list
+    function replaceDatalist(list) {
+        document.getElementById("demo").replaceWith(list)
+    }
+</script>
+
+</html>
