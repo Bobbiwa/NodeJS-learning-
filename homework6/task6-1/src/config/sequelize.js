@@ -1,7 +1,8 @@
 const { Sequelize } = require('sequelize');
-
+import * as dotenv from 'dotenv'
+dotenv.config()
 const sequelize = new Sequelize(
-  'postgres://postgres:123456@localhost:5432/myDatabase'
+  process.env.HOST
 );
 
 (async () => {
