@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes } from 'sequelize'
 const sequelize = new Sequelize('postgres://postgres:123456@localhost:5432/myDatabase')
 
-const Student = sequelize.define('student', {
+const User = sequelize.define('user', {
   id: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -31,4 +31,4 @@ const Student = sequelize.define('student', {
   }
 });
 
-module.exports = Student
+module.exports = User
